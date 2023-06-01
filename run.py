@@ -199,17 +199,17 @@ def main(input_args):
 
     # Check if config is outdated and ask user if it needs to be updated
     if is_config_file_available and outdate_config:
-        answer = utils.user_input("It seems that your config file is outdated. "
-                                  "Would you like to update it? (Y/n) ")
-        if answer.lower().startswith("y"):
-            config_file_update_complete(utils.update_config(args.configfile))
-            if not args.stop_after_configfile_check:
-                answer = utils.user_input("Would you like to stop to review the updated config? (Y/n)")
-                if answer.lower().startswith("y"):
-                    return
-        else:
-            utils.error("You might encounter unexpected errors ! "
-                        "Make sur to update your config before opening an issue!")
+#         answer = utils.user_input("It seems that your config file is outdated. "
+#                                   "Would you like to update it? (Y/n) ")
+#         if answer.lower().startswith("y"):
+        config_file_update_complete(utils.update_config(args.configfile))
+#             if not args.stop_after_configfile_check:
+#                 answer = utils.user_input("Would you like to stop to review the updated config? (Y/n)")
+#                 if answer.lower().startswith("y"):
+#                     return
+#         else:
+#             utils.error("You might encounter unexpected errors ! "
+#                         "Make sur to update your config before opening an issue!")
 
     if args.stop_after_configfile_check:
         return
@@ -249,9 +249,9 @@ def main(input_args):
         components.append(section)
     utils.printcolor(" ".join(components), utils.YELLOW)
     if not args.force:
-        answer = utils.user_input("Do you confirm? (Y/n) ")
-        if answer.lower().startswith("n"):
-            return
+#         answer = utils.user_input("Do you confirm? (Y/n) ")
+#         if answer.lower().startswith("n"):
+#             return
     config.set("general", "force", str(args.force))
     utils.printcolor(
         "The process can be long, feel free to take a coffee "
