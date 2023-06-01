@@ -248,7 +248,7 @@ def main(input_args):
             continue
         components.append(section)
     utils.printcolor(" ".join(components), utils.YELLOW)
-    if not args.force:
+#     if not args.force:
 #         answer = utils.user_input("Do you confirm? (Y/n) ")
 #         if answer.lower().startswith("n"):
 #             return
